@@ -6,12 +6,13 @@ spring:
     graphiql:
       enabled: true
   datasource:
-    url: jdbc:mysql://locahost:3306/storeDB
+    url: jdbc:mysql://localhost:3306/storeDB
     username: root
     password: root
   jpa:
     hibernate:
       ddl-auto: update
+    show-sql: true
 
 
 

@@ -16,7 +16,7 @@ import java.util.List;
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Double authorId;
+    private Long authorId;
 
     private String name;
     private String email;

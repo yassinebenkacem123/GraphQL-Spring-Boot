@@ -8,3 +8,8 @@ type Book {
     pageCount : Int
     description: String
 }
+type Author {
+    id: ID
+    name: String
+    dateOfBirth:
+}

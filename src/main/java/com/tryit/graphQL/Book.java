@@ -7,12 +7,13 @@ public record Book(
         Integer id,
         String name,
         Integer pageCount,
-        String description
+        String description,
+        Integer authorId
 ) {
     public static List<Book> books = Arrays.asList(
-            new Book(1, "Quran", 320, "best book to read in the world"),
-            new Book(2, "From poverty to power", 320, "If you want to make your life better read it"),
-            new Book(3, "Grow rich with peace of mind", 20, "This book will help u to be rich but with peace of mind")
+            new Book(1, "be yourself", 320, "best book to read for today", 1),
+            new Book(2, "From poverty to power", 320, "If you want to make your life better read it", 2),
+            new Book(3, "Grow rich with peace of mind", 20, "This book will help u to be rich but with peace of mind",3)
     );
 
 

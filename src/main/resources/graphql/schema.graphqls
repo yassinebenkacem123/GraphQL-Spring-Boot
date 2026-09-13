@@ -4,7 +4,8 @@ type Query{
 }
 
 type Mutation{
-    createAuthor(authorDTO: AuthorDTO): ResponseDTO
+    createAuthor(authorDTO: AuthorDTO): ResponseDTO,
+    createBook(bookDTO: BookDTO):ResponseDTO
 }
 
 type Book{
@@ -24,6 +25,11 @@ type Author{
 input AuthorDTO{
     name: String
     email: String
+}
+input BookDTO{
+    authorId: ID
+    title:String
+    description:String
 }
 
 type ResponseDTO{

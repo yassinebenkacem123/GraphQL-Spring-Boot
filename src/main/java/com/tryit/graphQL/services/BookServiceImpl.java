@@ -6,6 +6,7 @@ import com.tryit.graphQL.entity.Book;
 import com.tryit.graphQL.repositories.AuthorRepo;
 import com.tryit.graphQL.repositories.BookRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -28,7 +29,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public void createBookService(BookDTO bookDTO) {
+    public void createBookService(@Argument BookDTO bookDTO) {
         Book bookToSave = new Book();
 
         Author author = authorRepo.findById(bookDTO.getAuthorId()).orElseThrow(
@@ -39,5 +40,8 @@ public class BookServiceImpl implements BookService {
         bookToSave.setDescription(bookDTO.getDescription());
         bookToSave.setTitle(bookDTO.getTitle());
 
+        bookRepo.save(bookToSave);
+
     }
+
 }

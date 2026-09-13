@@ -25,7 +25,9 @@ public class BookController {
     }
 
     @MutationMapping
-    public ResponseDTO createBook(@Argument BookDTO bookDTO){
+    public ResponseDTO createBook(
+            @Argument BookDTO bookDTO
+    ){
 
         bookService.createBookService(bookDTO);
         return new ResponseDTO("true","Book created Successfully...");

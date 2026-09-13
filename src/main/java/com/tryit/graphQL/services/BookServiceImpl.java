@@ -44,4 +44,8 @@ public class BookServiceImpl implements BookService {
 
     }
 
+    @Override
+    public void deleteAuthorBook(Long bookId) {
+        bookRepo.deleteById(bookId);
+    }
 }

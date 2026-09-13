@@ -3,6 +3,7 @@ package com.tryit.graphQL.services;
 import com.tryit.graphQL.DTO.AuthorDTO;
 import com.tryit.graphQL.entity.Author;
 import com.tryit.graphQL.repositories.AuthorRepo;
+import com.tryit.graphQL.repositories.BookRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,9 @@ import java.util.List;
 public class AuthorServiceImpl implements AuthorService {
     @Autowired
     private AuthorRepo authorRepo;
+
+    @Autowired
+    private BookRepo bookRepo;
 
     @Override
     public List<Author> getAuthors() {
@@ -28,5 +32,13 @@ public class AuthorServiceImpl implements AuthorService {
         author.setName(authorDTO.getName());
         author.setEmail(authorDTO.getEmail());
         authorRepo.save(author);
+    }
+
+
+    @Override
+    public void deleteAuthor(Long authorId) {
+        bookRepo.deleteAll();
+        authorRepo.deleteById(authorId);
+
     }
 }

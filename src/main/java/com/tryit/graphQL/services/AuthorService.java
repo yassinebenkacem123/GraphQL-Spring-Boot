@@ -9,4 +9,6 @@ public interface AuthorService {
     List<Author> getAuthors();
 
     void createAuthor(AuthorDTO authorDTO);
+
+    void deleteAuthor(Long authorId);
 }

@@ -33,4 +33,17 @@ public class BookController {
         return new ResponseDTO("true","Book created Successfully...");
     }
 
+    @MutationMapping
+    public ResponseDTO deleteAuthorBook(
+            @Argument Long bookId
+    ){
+
+        bookService.deleteAuthorBook(bookId);
+
+        return new ResponseDTO(
+                "true",
+                "Book deleted Successfully..."
+        );
+    }
+
 }

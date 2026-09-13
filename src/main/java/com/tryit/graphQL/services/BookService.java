@@ -9,4 +9,6 @@ public interface BookService {
     List<Book> getBooks();
 
     void createBookService(BookDTO bookDTO);
+
+    void deleteAuthorBook(Long bookId);
 }

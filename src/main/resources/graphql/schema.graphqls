@@ -5,7 +5,9 @@ type Query{
 
 type Mutation{
     createAuthor(authorDTO: AuthorDTO): ResponseDTO,
-    createBook(bookDTO: BookDTO):ResponseDTO
+    createBook(bookDTO: BookDTO):ResponseDTO,
+    deleteAuthor(authorId: ID):ResponseDTO,
+    deleteAuthorBook(bookId:ID): ResponseDTO
 }
 
 type Book{

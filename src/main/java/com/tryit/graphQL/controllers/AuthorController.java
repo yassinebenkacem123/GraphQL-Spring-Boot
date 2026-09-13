@@ -39,4 +39,14 @@ public class AuthorController {
         );
     }
 
+    @MutationMapping
+    public  ResponseDTO deleteAuthor(@Argument Long authorId){
+        authorService.deleteAuthor(authorId);
+
+        return new ResponseDTO(
+                "True",
+                "Author deleted successfully..."
+        );
+    }
+
 }
